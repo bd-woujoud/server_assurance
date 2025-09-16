@@ -13,8 +13,8 @@ connectDB();
 
 const app = express();
 const corsOptions = {
-  // origin: ["https://big_money_business.surge.sh"], 
-  origin: ["https://client-assurance.vercel.app"],
+
+  origin: ["https://assurance-next.vercel.app"],
   credentials: true, // This allows cookies to be sent
 };
 app.use(cors(corsOptions));
