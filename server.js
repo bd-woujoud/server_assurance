@@ -4,6 +4,7 @@ const connectDB = require("./config/db.js");
 
 const dotenv = require("dotenv");
 const cors = require("cors");
+const { errorHandler, notFound } = require("./midleware/errorHandler.js");
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/users", require("./routes/userRoutes.js"));
 
 // app.get("/", (req, res) => res.send("Server is ready"));
 
-
+app.use(notFound)
+app.use(errorHandler)
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

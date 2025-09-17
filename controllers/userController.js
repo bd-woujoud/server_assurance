@@ -45,5 +45,24 @@ const registerUser = async (req, res) => {
     });
   }
 };
+const getUsers = async (req, res) => {
+  try {
 
-module.exports = { registerUser };
+
+    const users = await User.find({})
+
+
+    return res.status(201).json({
+      users
+    });
+  } catch (error) {
+
+
+    console.error("❌ Erreur lors de l'inscription:", error);
+
+    return error
+
+  }
+};
+
+module.exports = { registerUser, getUsers };
