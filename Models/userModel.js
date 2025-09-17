@@ -17,8 +17,16 @@ const UserSchema = mongoose.Schema(
     phone: {
       type: String,
       required: [true, "Le téléphone est requis"],
-      unique: true // Éviter les doublons de téléphone
+      unique: true,
+      // validate: {
+      //   validator: function (v) {
+      //     // 📌 Numéro suisse : +41XXXXXXXXX ou 0XXXXXXXXX
+      //     return /^(\+41|0)([1-9]{1}[0-9]{8})$/.test(v);
+      //   },
+      //   message: props => `${props.value} n'est pas un numéro suisse valide`
+      // }
     },
+
   },
   {
     timestamps: true,
