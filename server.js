@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 const corsOptions = {
 
-  origin: ["https://assurance-next.vercel.app"],
+  origin: ["https://www.comparateur-assurance.ch"],
   credentials: true, // This allows cookies to be sent
 };
 app.use(cors(corsOptions));
